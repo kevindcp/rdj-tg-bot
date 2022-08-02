@@ -16,8 +16,6 @@ updater = Updater(
 dispatcher = updater.dispatcher
 
 # Welcome message
-
-
 def welcome(update, context):
     chat_id = update.effective_chat.id
     context.bot.send_photo(
@@ -88,7 +86,7 @@ def generate_rdj(update, context):
 # Runs the wolcome function when user starts the bot
 dispatcher.add_handler(CommandHandler("start", welcome))
 
-# Use generate_rdj method for any message thats not a command
+# Use generate_rdj method for any message that is not a command
 dispatcher.add_handler(MessageHandler(Filters.text, generate_rdj))
 updater.start_polling()
 updater.idle()
