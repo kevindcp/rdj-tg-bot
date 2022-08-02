@@ -6,9 +6,10 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 import os
+from dotenv import load_dotenv
 
-
-telegram_bot_token = os.environ.get('TOKEN')
+load_dotenv()
+telegram_bot_token = os.getenv('TOKEN')
 
 updater = Updater(
     token=telegram_bot_token, use_context=True)
